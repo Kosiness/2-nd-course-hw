@@ -8,7 +8,8 @@
   }
 
   .center {
-    padding-left: 120px;
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
     
   }
 
@@ -72,8 +73,17 @@
     flex-wrap: wrap;
     column-gap: 32px;
     row-gap: 32px;
-    padding-right: 120px;
-    
+  }
+
+  .mid__game {
+    position: relative;
+  }
+
+  .game__name {
+    height: 300px;
+    width: 379px;
+    size: 24px;
+    position: absolute;
   }
 
   .mid__img {
