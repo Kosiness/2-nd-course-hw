@@ -3,7 +3,7 @@
     padding: 0;
   }
 
-  body {
+  body, button {
     font-family: "Montserrat", sans-serif;
   }
 
@@ -75,15 +75,16 @@
     row-gap: 32px;
   }
 
-  .mid__game {
+  .game {
     position: relative;
   }
 
   .game__name {
-    height: 300px;
-    width: 379px;
+    left: 32px;
+    bottom: 32px;
     size: 24px;
     position: absolute;
+    color: #FFFFFF;
   }
 
   .mid__img {
