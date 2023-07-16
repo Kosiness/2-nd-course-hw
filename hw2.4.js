@@ -43,7 +43,7 @@ console.log( 'Интераций : ' + sum + ", получилось число 
 let friday = 4;
 
 do {
-    console.log ('Сегодня пятница , ' + friday + '-e число.Необходимо подготовить отчет.');
+    console.log (`Сегодня пятница, ${friday} + -e число.Необходимо подготовить отчет.`);
     friday = friday+7;
     friday++;
 } while (friday <=31);
