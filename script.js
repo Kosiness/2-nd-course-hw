@@ -1,3 +1,4 @@
+
 // Задание 1//
 let a = 10;
 alert (a);
@@ -80,5 +81,6 @@ alert (user[info]);
 
 let userName = prompt('Введите ваше имя');
 alert (`Привет, ${userName}!`);
+
 
 
