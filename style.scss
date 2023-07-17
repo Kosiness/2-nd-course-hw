@@ -78,6 +78,7 @@
    
   }
 
+
   .mid__game:hover {
     transform: scale(1.02);
     box-shadow: 0 0 5px #ccc;
@@ -96,9 +97,14 @@
   }
 
   .mid__img {
-    display: flex;
-    border: none;
-    border-radius: 20px;
+   display: flex;
+   border: none;
+   border-radius: 20px;
+   width: 378px;
+   height: 300px;
+   grid-column: span 4;
+   
+   
   }
 
   @import 'mobile';

@@ -94,6 +94,9 @@ body, button {
   display: flex;
   border: none;
   border-radius: 20px;
+  width: 378px;
+  height: 300px;
+  grid-column: span 4;
 }
 
 @media (max-width: 767px) {
@@ -136,5 +139,9 @@ body, button {
     grid-column: span 4;
     width: 343px;
     height: 300px;
+  }
+  .mid__img {
+    height: 300px;
+    width: 343px;
   }
 }/*# sourceMappingURL=style.css.map */

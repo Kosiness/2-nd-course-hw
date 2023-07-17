@@ -42,43 +42,25 @@ alert(a+b);
 let MounthNumber = prompt('Введите число месяца');
 
 switch(MounthNumber) {
-    case '1' :
-        console.log('Январь , зима');
-        break;
-    case '2' :
-        console.log('Февраль , зима');
-        break;
-    case '3' :
-        console.log('Март , весна');
-        break;
-    case '4' :
-        console.log('Апрель , весна');
-        break;
-    case '5' :
-        console.log('Май , весна');
-        break;
-    case '6' :
-        console.log('Июнь , лето');
-        break;
-    case '7' :
-        console.log('Июль , лето');
-        break;
-    case '8' :
-        console.log('Август , лето');
-        break;
-    case '9' :
-        console.log('Сентябрь , осень');
-        break;
-    case '10' :
-        console.log('Октябрь , осень');
-        break;
-    case '11' :
-        console.log('Ноябрь , осень');
-        break;
-    case '12' :
-        console.log('Декабрь , зима');
-        break;
-
+    case '1':
+    case '2': 
+    case '12': 
+console.log('Зима');
+    break;
+    case '3':
+    case '4':
+    case '5':
+console.log('Весна');
+    break;
+    case '6':
+    case '7':
+    case '8':
+console.log('Лето');
+    break;
+    case '9':
+    case '10':
+    case '11':
+console.log('Осень');
     default :
         console.log('Такого месяца не существует!')
         break;
