@@ -55,6 +55,10 @@ body, button {
   font-weight: 400;
   margin-top: 44px;
   border-radius: 30px;
+  transition: background-color 0.3s ease-in;
+}
+.header__button:hover {
+  background: #eb443f;
 }
 
 .mid {
@@ -73,9 +77,14 @@ body, button {
   padding-bottom: 128px;
 }
 
+.mid__game {
+  width: 379px;
+  height: 300px;
+  transition: border 0.2s ease-in;
+  box-sizing: border-box;
+}
 .mid__game:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 5px #ccc;
+  outline: 3px solid #44d2ff;
 }
 
 .game {
@@ -97,6 +106,64 @@ body, button {
   width: 378px;
   height: 300px;
   grid-column: span 4;
+}
+
+.section {
+  height: 800px;
+  background-image: url(Img/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 282px;
+  display: flex;
+  gap: 135px;
+  align-items: center;
+}
+.section__heading {
+  display: flex;
+  width: 584px;
+  padding: 33px 0px 45px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+.section__heading_tittle {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.section__heading_text {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+}
+.section__heading_button {
+  width: 234.063px;
+  height: 48.603px;
+  border-radius: 30px;
+  background: #9c0332;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: background-color 0.3s ease-in;
+  border: none;
+}
+.section__heading_button:hover {
+  background: #eb443f;
+}
+.section__heading_img {
+  box-sizing: border-box;
+  width: 485px;
+  height: 333px;
 }
 
 @media (max-width: 767px) {

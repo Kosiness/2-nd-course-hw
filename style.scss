@@ -58,6 +58,11 @@
     font-weight: 400;
     margin-top: 44px;
     border-radius: 30px;
+    transition: background-color 0.3s ease-in;
+
+    &:hover {
+      background: #eb443f;
+    }
   }
 
   .mid {
@@ -78,10 +83,14 @@
    
   }
 
-
-  .mid__game:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 5px #ccc;
+  .mid__game {
+    width: 379px;
+    height: 300px;
+    transition: border 0.2s ease-in;
+    box-sizing: border-box;
+    &:hover {
+    outline: 3px solid #44d2ff;
+    }
   }
 
   .game {
@@ -103,8 +112,69 @@
    width: 378px;
    height: 300px;
    grid-column: span 4;
-   
-   
+  }
+
+  .section {
+    height: 800px;
+    background-image: url(Img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 282px;
+    display: flex;
+    gap: 135px;
+    align-items: center;
+
+    &__heading {
+      display: flex;
+      width: 584px;
+      padding: 33px 0px 45px 0px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      
+      &_tittle {
+        color: #fff;
+        font-family: Montserrat;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      &_text {
+        color: #fff;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 32px;
+      }
+
+      &_button{
+        width: 234.063px;
+        height: 48.603px;
+        border-radius: 30px;
+        background: #9c0332;
+        color: #fff;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: background-color 0.3s ease-in;
+        border: none;
+
+        &:hover {
+          background: #eb443f;
+        }
+      }
+      &_img{
+        box-sizing: border-box;
+        width: 485px;
+        height: 333px;
+      }
+    }
   }
 
   @import 'mobile';
