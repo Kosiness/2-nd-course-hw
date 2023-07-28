@@ -88,6 +88,7 @@
     height: 300px;
     transition: border 0.2s ease-in;
     box-sizing: border-box;
+    border-radius: 16px;
     &:hover {
     outline: 3px solid #44d2ff;
     }
