@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homework</title>
+    <title>Homework1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+<div class="header center">
+    <div class="header__section">
+        <h1 class="header__tittle">Добро пожаловать <br>на мой сайт !</h1>
+        <p class="header__text">Вам предстоит пройти несколько увлекательных <br>игр. Если готов нажимай <span class="header__text_word">поехали</span> и <span class="header__text_word">приступай</span></p>
+        <button class="header__button">Поехали!</button>
+    </div>
+</div>
+<div class="mid center">
+    <div class="mid__header">
+        <div class="mid__choice">
+            <div class="mid__game">
+                <a href="#" class="game"><img class="mid__img" src="Img/GameOne.png" alt="Game 1">
+                <div class="game__name">Игра 1</div></a>
+            </div>
+            <div class="mid__game">
+                <a href="#" class="game"><img class="mid__img" src="Img/GameTwo.png" alt="Game 2">
+                <div class="game__name">Игра 2</div></a>
+            </div>
+            <div class="mid__game">
+                <a href="#" class="game"><img class="mid__img" src="Img/GameThree.png" alt="Game 3">
+                <div class="game__name">Игра 3</div></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="section center">
+    <div class="section__heading center">
+        <h2 class="section__heading_tittle">Времена года!</h2>
+        <p class="section__heading_text">Нажмите кнопку играть, введите номер месяца (от 1 до 12) и вы узнаете к какому времени года он относится</p>
+        <button onclick="seasons()" class="section__heading_button">Играть!</button>
+    </div>
+    <div class="img"><img class="section__heading_img" src="Img/undraw_video_game_night_8h8m 1.png" alt="joystick"></div>
+</div>  
+
+<div class="section center  section__second" >
+    <div class="section__heading center">
+        <h2 class="section__heading_tittle">Запомни слова!</h2>
+        <p class="section__heading_text">При нажатии на кнопку играть, вы увидите несколько слов, которые вам необходимо запомнить.</p>
+        <button onclick="seasonsSecond()" class="section__heading_button">Играть!</button>
+    </div>
+    <div class="img"><img class="section__heading_img" src="Img/undraw_gaming_re_cma2 1.png" alt="joystick"></div>
+</div>  
+<script src="script.js"></script>
 </body>
 </html>
