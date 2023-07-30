@@ -121,10 +121,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 282px;
     display: flex;
     gap: 135px;
     align-items: center;
+
+    &__second {
+      flex-direction: row-reverse;
+    }
 
     &__heading {
       display: flex;

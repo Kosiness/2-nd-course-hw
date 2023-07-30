@@ -18,3 +18,25 @@ function seasons() {
     }
 }
 seasons()
+
+
+const seasonsSecond = () => {
+  const fruits = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
+  newFruit = fruits.map(el =>' '+ el);
+  newFruit.sort(()=>Math.random()-0.5);
+  alert(`Запомни слова: ${newFruit}`);
+
+  const userAnswerFirst = ' ' + prompt( `Какое было первое слово?`);
+  const userAnswerSecond = ' ' + prompt(`Какое было последнее слово?`);
+
+  if(userAnswerFirst.toLowerCase()===newFruit[0].toLowerCase() && userAnswerSecond.toLowerCase()===newFruit[6].toLowerCase()) {
+    alert("Поздравляю,у тебя прекрасная память!!! ")
+  }
+  else if(userAnswerFirst.toLowerCase()===newFruit[0].toLowerCase() && userAnswerSecond.toLowerCase()===newFruit[6].toLowerCase()) {
+    alert("Вы близки к победе!!!")
+  }
+  else {
+  alert("Эх,не верно!Давай попробуем еще раз!!!")
+  }
+}
+seasonsSecond()
