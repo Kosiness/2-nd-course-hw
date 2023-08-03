@@ -12,20 +12,17 @@ const people = [
  // Задание 2 //
 
  function isPositive(el) {
-    if (el >0) {
-        
-    }
+    return el >= 0;
     }
     function isMale(el) {
-    if(el.gender === 'male'){
-        return el;
-    }
+    return el.gender === 'male';
+    
     }
     function filter(arr, ruleFunction) {
     const output = [];
     for (let i = 0;i < arr.length;i++){
         if(ruleFunction(arr[i]))
-        output.push(ruleFunction(arr[i]));
+        output.push(arr[i]);
     }
     return output;
     }
