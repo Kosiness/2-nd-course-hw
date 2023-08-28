@@ -74,6 +74,35 @@
   <script>
     "use strict";
 
+    const fetchPromise = fetch("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments", {
+      method: "GET"
+    });
+
+    // подписываемся на успешное завершение запроса с помощью then
+    fetchPromise.then((response) => {
+      // Запускаем преобразовываем "сырые" данные от API в json формат
+      const jsonPromise = response.json();
+
+      // Подписываемся на результат преобразования
+      jsonPromise.then((responseData) => {
+
+        const appComments = responseData.comments.map((comment) => {
+          return {
+            name: comment.author.name,
+            date: now(currentDate),
+            text: comment.text,
+            likes: 0,
+            activeLike: false,
+          }
+        })
+        // получили данные и рендерим их в приложении
+        console.log(responseData);
+        // comment = responseData.comment;
+        comments = appComments;
+        renderComment();
+      });
+    });
+
     const commentsArr = [
     {
       name: 'Глеб Фокин',
@@ -88,7 +117,7 @@
       comment: 'Мне нравится как оформлена эта страница! ❤',
       likesCounter: '75',
       myLike: true,
-    }
+    } 
   ];
 
     const buttonElement = document.getElementById( "add-button");
@@ -177,24 +206,60 @@
 
 
 
-  const now = (currentDate) => {
+  let now = (currentDate) => {
     let minute = plusZero(currentDate.getMinutes());
     let hours = plusZero(currentDate.getHours());
     let date = plusZero(currentDate.getDate());
-    let month = plusZero(currentDate.getMonth());
+    let month = plusZero(currentDate.getMonth()+1);
     return `${date}.${month}.${currentDate.getFullYear() % 100} ${hours}:${minute}`;
   }
 
+  
   const createNewComment = () => {
-    let currentDate = new Date();
-    commentsArr.push({
+   let currentDate = new Date();
+   commentsArr.push({
       name: nameInputElement.value.replaceAll('<', "&lt;").replaceAll('>', '&gt'),
       date: now(currentDate),
       comment: commentInputElement.value.replaceAll('<', "&lt;").replaceAll('>', '&gt'),
       likesCounter: 0,
       myLike: false,
-    });
+    }); 
   }
+
+  fetch("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments", {
+        method: "POST",
+        body: JSON.stringify({
+          name: nameInputElement.value,
+          text: commentInputElement.value,
+        })
+        // JSON.stringifylikes:
+      }).then((response) => {
+        response.json().then((responseData) => {
+
+          fetch("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments", {
+            method: "GET"  
+          }).then((response) => {
+      // Запускаем преобразовываем "сырые" данные от API в json формат
+     response.json().then((responseData) => {
+
+        const appComments = responseData.comments.map((comment) => {
+          return {
+            name: comment.author.name,
+            date: now (new Date (comment.date)),
+            text: comment.text,
+            likes: 0,
+            myLike: false,
+          };
+        });
+        // // получили данные и рендерим их в приложении
+        // console.log(responseData);
+        //comment = responseData.comments;
+        commentsArr = appComments;
+        renderComments();
+      });
+        });
+      });
+    });
 
   buttonElement.addEventListener("click", () => {
     createNewComment();
