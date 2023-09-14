@@ -95,15 +95,9 @@
   let fetchPromise = fetch("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments", {
       method: "GET"
     });
-
-    // подписываемся на успешное завершение запроса с помощью then
     fetchPromise.then((response) => {
-      // Запускаем преобразовываем "сырые" данные от API в json формат
-      const jsonPromise = response.json();
-
-      // Подписываемся на результат преобразования
+      const jsonPromise = response.json(); 
       jsonPromise.then((responseData) => {
-
         commentsArr = responseData.comments.map((comment) => {
       return {
             name: comment.author.name,
@@ -113,13 +107,13 @@
             likesCounter: 0,
           }
         });
-        // получили данные и рендерим их в приложении
-        //console.log(fetchPromise);
-        // comment = responseData.comment;
-        //comments = appComments;
-        renderComment();
+        renderComments();
       });
     });
+
+    // fetch ("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments").then(res =>res.json()).then((data) =>{
+    //   console.log('data', data);
+    // })
 
     const buttonElement = document.getElementById( "add-button");
     const listElement = document.getElementById("list");
@@ -179,9 +173,9 @@
             <div>${comment.name}</div>
             <div>${comment.date}</div>
           </div>
-          <div class="comment-body" data-text = "${comment.comment}" data-name = "${comment.name}">
+          <div class="comment-body" data-text = "${comment.text}" data-name = "${comment.name}">
             <div class="comment-text">
-              ${comment.comment}
+              ${comment.text}
             </div>
           </div>
           <div class="comment-footer">
@@ -216,36 +210,22 @@ const now = (currentDate) => {
 };
 
   const createNewComment = () => {
-
     fetch("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments", {
         method: "POST",
         body: JSON.stringify({
           name: nameInputElement.value,
           text: commentInputElement.value,
-        })
-        // JSON.stringifylikes:
-      }).then((response) => {
-        response.json().then((responseData) => {
-
-          fetch("https://wedev-api.sky.pro/api/v1/Shishkin-Kostya/comments", {
-  method: "GET"
-}).then((response) => {
-  response.json().then((responseData) => {
-    const commentsArr = responseData.comments.map((comment) => {
-      return {
-        name: comment.author.name,
-        date: now (new Date (comment.date)),
-        comment: comment.text,
-        myLike: comment.likes,
+        })}).then(() => {
+        commentsArr.push({
+        name: nameInputElement.value,
+        date: now (new Date ()),
+        text: commentInputElement.value,
+        myLike: false,
         likesCounter: 0,
-      };
+        })
+        renderComments();
     });
-    commentsArr = appComments;
-    renderComments();
-  });
-});
-});
-    });
+    
     /*let currentDate = new Date();
     commentsArr.push({
       name: nameInputElement.value.replaceAll('<', "&lt;").replaceAll('>', '&gt'),
@@ -254,14 +234,14 @@ const now = (currentDate) => {
       likesCounter: 0,
       myLike: false,
     });*/
-  }
+  };
 
  
    
 
   buttonElement.addEventListener("click", () => {
     createNewComment();
-    renderComments();    
+       
   });
     console.log("It works!");
   </script>
